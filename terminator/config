@@ -1,0 +1,18 @@
+[global_config]
+[keybindings]
+  copy = <Control><Shift>c
+  paste = <Control>v
+  next_tab = <Control>Page_Down
+  prev_tab = <Control>Page_Up
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_image = None

@@ -1,0 +1,75 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 2.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address. 
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# Stuff after 'TEXT' will be formatted on screen
+TEXT
+
+# JSON for i3bar
+
+[
+#Kernel
+{"full_text":" Kernel","color":"\#FF4000","separator":false,"separator_block_width":6},\
+{"full_text":"[${kernel}]","color":"\#808080","separator":false,"separator_block_width":6},\
+#Finds current volume. May need modified depending on your setup
+{"full_text":" Vol","color":"\#268BD2","separator":false,"separator_block_width":6},\
+{"full_text":"${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ","color":"\#808080","separator":false,"separator_block_width":6},\
+#Brighness
+{"full_text":" Brighness","color":"\#F7FE2E","separator":false,"separator_block_width":6},\
+{"full_text":"[${exec xbacklight| awk '{printf("%d\n",$1 + 0.5)}'}%] ","color":"\#808080","separator":false,"separator_block_width":6},\
+#Battery
+{"full_text":" Battery","color":"\#FF0000","separator":false,"separator_block_width":6},\
+{"full_text":"[${battery_percent BAT1}%]","color":"\#808080","separator":false,"separator_block_width":6},\
+#Calender/time
+{"full_text":" Day","color":"\#2E9AFE","separator":false,"separator_block_width":6},\
+{"full_text":"${time %a %b %d}","color":"\#808080","separator":false},\
+{"full_text":" Time","color":"\#0404B4","separator":false,"separator_block_width":6},\
+{"full_text":"${time %H:%M:%S} ","color":"\#808080","separator":false},\
+#CPU Heat
+{"full_text": " CPU","color":"\#DC322F","separator":false},\
+{"full_text": " $acpitemp°C [$cpu%] ","color":"\#808080","separator":false},\
+#Network
+{"full_text": " ≣ [$membar] ", "color":"\#B58900", "separator":false},\
+#${if_up ppp0}{"full_text": " ≈ ","color":"\#33CC99"},\
+#${if_up wlp2s0}{"full_text": "WIRELESS ${wireless_essid wlp2s0} [${wireless_link_qual_perc wlp2s0}%] ","color":"\#33CC99"},\
+#$else${if_up enp1s0}{"full_text": " ≈ enp1s0 ","color":"\#33CC99","separator":false},\
+${if_up enp1s0}{"full_text": " ≈ enp1s0 ","color":"\#33CC99","separator":false},\
+{"full_text": " ≈ enp1s0 ","color":"\#33CC99","separator":false},\
+#$else{"full_text": " ≈ no connection ","color":"\#33CC99","separator":false},$endif$endif$endif,\
+#Home
+{"full_text" : " ⌂" ,"color":"\#FF4000","separator":false,"separator_block_width":6},\
+{"full_text":"${fs_free /home} Free ","color":"\#808080","separator":false,"separator_block_width":6},
+#RAM used
+{"full_text":" RAM" , "color":"\#F7FE2E","separator":false,"separator_block_width":6},\
+{"full_text":"${memperc}%" , "color" :
+${if_match ${memperc}<90}"\#808080"${else}"\#FF4000"${endif}}
+],

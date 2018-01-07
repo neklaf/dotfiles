@@ -16,6 +16,11 @@ I3STATUSCONF="$HOME/.i3status.conf"
 # Main program
 #------------------------------------------------------------------------------
 
+#------------------------------------------------------------------------------
+# Notes: create a symbolic link to bin directory
+# $ ln -s $HOME/.local/bin bin
+#------------------------------------------------------------------------------
+
 if [ "$1" != "-i" -a "$1" != "-u" ]; then
     echo "Usage: $0 [-i|-u]"
     echo "  -i: installs i3wm configuration"
@@ -29,7 +34,7 @@ if [ "$1" == "-i" ]; then
         { echo "Aborting installation..."; exit 1; }
 
     echo "Checking needed packages..."
-    check_and_install_packages i3-wm feh conky thunar dunst
+    check_and_install_packages i3-wm feh conky thunar dunst dmenu
 
     echo "Backing up your files..."
     do_backup $I3STATUSCONF $CONKYRC $XINITRC $I3WM_FOLDER || \

@@ -5,8 +5,8 @@
 # Description:  Common functions used in setup scripts.
 #==============================================================================
 
-FILE_EXT=".bck"
-FOLDER_EXT="_bck"
+FILE_EXT=".OLD"
+FOLDER_EXT="_OLD"
 
 #=== FUNCTION =================================================================
 # Name:         check_and_install_packages
@@ -28,7 +28,7 @@ function check_and_install_packages() {
 #=== FUNCTION =================================================================
 # Name:         check_if_already_backed_up
 # Description:  check if any of the params has been already backed up.
-# Param n:      file or folder full path 
+# Param n:      file or folder full path
 #==============================================================================
 function check_if_already_backed_up() {
     for element in "$@"; do
@@ -43,7 +43,7 @@ function check_if_already_backed_up() {
 #=== FUNCTION =================================================================
 # Name:         do_backup
 # Description:  backups a list of files and/or folders
-# Param n:      file or folder full path 
+# Param n:      file or folder full path
 #==============================================================================
 function do_backup() {
     for element in "$@"; do
@@ -53,7 +53,7 @@ function do_backup() {
             mv --no-clobber $element $dst_file || \
                 { echo "Error $? moving file '$element'"; return 1; }
         elif [ -d "$element" ]; then
-            dst_folder="${element}$FOLDER_EXT"        
+            dst_folder="${element}$FOLDER_EXT"
             echo "Moving folder '$element' -> '$dst_folder'"
             mv --no-clobber --no-target-directory $element $dst_folder || \
                 { echo "Error $? moving folder '$element'"; return 1; }
@@ -65,7 +65,7 @@ function do_backup() {
 #=== FUNCTION =================================================================
 # Name:         do_restore
 # Description:  restores a list of files and/or folders
-# Param n:      file or folder full path 
+# Param n:      file or folder full path
 #==============================================================================
 function do_restore() {
     for element in "$@"; do
@@ -94,7 +94,7 @@ function do_restore() {
 # Notes:        Only works with folders and files starting with "."
 #               The file/folder must exist in the current path without the
 #                   starting dot.
-# Param n:      file or folder full path 
+# Param n:      file or folder full path
 #==============================================================================
 function do_install() {
     for element in "$@"; do
@@ -109,4 +109,3 @@ function do_install() {
         fi
     done
 }
-

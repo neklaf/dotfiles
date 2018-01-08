@@ -17,8 +17,9 @@ I3STATUSCONF="$HOME/.i3status.conf"
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# Notes: create a symbolic link to bin directory
+# Notes (07/01/2018): create a symbolic link to bin directory
 # $ ln -s $HOME/.local/bin bin
+# It depends on some scripts located in $HOME/bin
 #------------------------------------------------------------------------------
 
 if [ "$1" != "-i" -a "$1" != "-u" ]; then
@@ -34,7 +35,7 @@ if [ "$1" == "-i" ]; then
         { echo "Aborting installation..."; exit 1; }
 
     echo "Checking needed packages..."
-    check_and_install_packages i3-wm feh conky thunar dunst dmenu
+    check_and_install_packages i3-wm feh conky thunar dunst dmenu i3lock
 
     echo "Backing up your files..."
     do_backup $I3STATUSCONF $CONKYRC $XINITRC $I3WM_FOLDER || \

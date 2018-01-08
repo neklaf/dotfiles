@@ -43,8 +43,8 @@ TEXT
 #Finds current volume. May need modified depending on your setup
 {"full_text":" Vol","color":"\#268BD2","separator":false,"separator_block_width":6},\
 {"full_text":"${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ","color":"\#808080","separator":false,"separator_block_width":6},\
-#Brighness
-{"full_text":" Brighness","color":"\#F7FE2E","separator":false,"separator_block_width":6},\
+#Brightness
+{"full_text":" Brightness","color":"\#F7FE2E","separator":false,"separator_block_width":6},\
 {"full_text":"[${exec xbacklight| awk '{printf("%d\n",$1 + 0.5)}'}%] ","color":"\#808080","separator":false,"separator_block_width":6},\
 #Battery
 {"full_text":" Battery","color":"\#FF0000","separator":false,"separator_block_width":6},\

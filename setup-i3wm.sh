@@ -35,7 +35,7 @@ if [ "$1" == "-i" ]; then
         { echo "Aborting installation..."; exit 1; }
 
     echo "Checking needed packages..."
-    check_and_install_packages i3-wm feh conky thunar dunst dmenu i3lock xbacklight scrot hibernate gimp
+    check_and_install_packages i3-wm feh conky thunar dunst dmenu i3lock xbacklight scrot hibernate gimp hamster-applet
 
     echo "Backing up your files..."
     do_backup $I3STATUSCONF $CONKYRC $XINITRC $I3WM_FOLDER || \

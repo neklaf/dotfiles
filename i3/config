@@ -136,8 +136,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # From here: http://i3wm.org/docs/user-contributed/lzap-config.html
 # pulse audio volume control
-bindsym $mod+Shift+s exec /usr/bin/pactl set-sink-volume 0 -5%
-bindsym $mod+Shift+w exec /usr/bin/pactl set-sink-volume 0 +5%
+# Alternative keys to volume control: 
+#bindsym $mod+Shift+s exec /usr/bin/pactl set-sink-volume 0 -5%
+#bindsym $mod+Shift+w exec /usr/bin/pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec /usr/bin/pactl set-sink-volume 0 -5%
 bindsym XF86AudioRaiseVolume exec /usr/bin/pactl set-sink-volume 0 +5%
 bindsym XF86AudioMute exec /usr/bin/pactl set-sink-volume 0 0

@@ -2,8 +2,6 @@
 [keybindings]
   copy = <Control><Shift>c
   paste = <Control>v
-  next_tab = <Control>Page_Down
-  prev_tab = <Control>Page_Up
 [layouts]
   [[default]]
     [[[child1]]]
@@ -16,3 +14,6 @@
 [profiles]
   [[default]]
     background_image = None
+    font = Monospace 10
+    use_system_font = False
+

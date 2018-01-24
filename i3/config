@@ -174,12 +174,12 @@ bindsym $mod+r mode "resize"
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-	bindsym l exec --no-startup-id i3exit.sh lock, mode "default"
-	bindsym e exec --no-startup-id i3exit.sh logout, mode "default"
-	bindsym s exec --no-startup-id i3exit.sh suspend, mode "default"
-	bindsym h exec --no-startup-id i3exit.sh hibernate, mode "default"
-	bindsym r exec --no-startup-id i3exit.sh reboot, mode "default"
-	bindsym Shift+s exec --no-startup-id i3exit.sh shutdown, mode "default"
+	bindsym l exec --no-startup-id $HOME/.local/bin/i3exit.sh lock, mode "default"
+	bindsym e exec --no-startup-id $HOME/.local/bin/i3exit.sh logout, mode "default"
+	bindsym s exec --no-startup-id $HOME/.local/bin/i3exit.sh suspend, mode "default"
+	bindsym h exec --no-startup-id $HOME/.local/bin/i3exit.sh hibernate, mode "default"
+	bindsym r exec --no-startup-id $HOME/.local/bin/i3exit.sh reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id $HOME/.local/bin/i3exit.sh shutdown, mode "default"
 # back to normal: Enter or Escape
 bindsym Return mode "default"
 bindsym Escape mode "default"
@@ -217,11 +217,11 @@ bar {
 
 #Startup programs
 #exec --no-startup-id feh --bg-fill ~/img/banksy-hd-wallpaper.jpg
-exec --no-startup-id feh --bg-fill ~/img/minions.jpg
-exec --no-startup-id rednotebook
+exec --no-startup-id /usr/bin/feh --bg-fill ~/img/minions.jpg
+exec --no-startup-id $HOME/.local/bin/rednotebook
 exec --no-startup-id chromium-browser
 exec --no-startup-id firefox
 exec --no-startup-id netbeans
-exec --no-startup-id sublime
+exec --no-startup-id $HOME/.local/bin/sublime
 #exec --no-startup-id /usr/bin/mysql-workbench
 #exec --no-startup-id sh -c /home/aitor/bin/vm_start.sh

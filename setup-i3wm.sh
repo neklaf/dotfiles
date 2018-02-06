@@ -17,7 +17,11 @@ I3STATUSCONF="$HOME/.i3status.conf"
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# Notes (07/01/2018): create a symbolic link to bin directory
+# NOTES:
+# (30/01/2018): it is not necessary to create a symbolic link
+# only it is needed to use full path for scripts used in configuration 
+# files
+# (07/01/2018): create a symbolic link to bin directory
 # $ ln -s $HOME/.local/bin bin
 # It depends on some scripts located in $HOME/bin
 #------------------------------------------------------------------------------
@@ -35,7 +39,7 @@ if [ "$1" == "-i" ]; then
         { echo "Aborting installation..."; exit 1; }
 
     echo "Checking needed packages..."
-    check_and_install_packages i3-wm feh conky thunar dunst dmenu i3lock xbacklight scrot hibernate gimp hamster-applet clusterssh
+    check_and_install_packages i3-wm feh conky thunar dunst dmenu i3lock xbacklight scrot hibernate gimp hamster-applet clusterssh meld
 
     echo "Backing up your files..."
     do_backup $I3STATUSCONF $CONKYRC $XINITRC $I3WM_FOLDER || \

@@ -27,6 +27,8 @@ Some performance tweaks
 <div align="center">
    <sub>Created by
    <a href="https://github.com/davidag/">David Alfonso</a>
+</div>
+<div align="center">
    <sub>Crontributed by
    <a href="https://twitter.com/AitorAcedo">AitorAcedo</a>
 </div>

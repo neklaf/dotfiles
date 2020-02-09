@@ -18,12 +18,11 @@ I3STATUSCONF="$HOME/.i3status.conf"
 
 #------------------------------------------------------------------------------
 # NOTES:
-# (30/01/2018): it is not necessary to create a symbolic link
-# only it is needed to use full path for scripts used in configuration 
-# files
 # (07/01/2018): create a symbolic link to bin directory
 # $ ln -s $HOME/.local/bin bin
 # It depends on some scripts located in $HOME/bin
+# (30/01/2018): it's not necessary to create a symbolic link
+# only it is needed to use full path for scripts used in configuration files
 #------------------------------------------------------------------------------
 
 if [ "$1" != "-i" -a "$1" != "-u" ]; then

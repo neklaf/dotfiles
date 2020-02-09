@@ -109,3 +109,31 @@ function do_install() {
         fi
     done
 }
+
+#=== FUNCTION =================================================================
+# Name:         do_map_install
+# Description:  installs a resources collection in which key is the origin and 
+#               values are the target
+# Notes:        Taking advantages of associative arrays in Bash (required > v4)
+#               ${arr[*]}         # All of the items in the array
+#               ${!arr[*]}        # All of the indexes in the array
+#               ${!arr[@]}        # All of the indexes in the array
+#               ${#arr[*]}        # Number of items in the array
+#               ${#arr[0]}        # Length of item zero
+# Param n:      a list of associative arrays
+#==============================================================================
+function do_map_install() {
+    for element in "$@"; do
+	eval "declare -A element="${element#*=}
+        for key in "${!element[@]}"; do 
+            printf "$key - ${element[$key]}\n";
+            if [ -f "$key" ]; then
+            	printf "Installing file '$key' -> ${element[$key]}\n"
+            	cp --no-clobber --preserve $key ${element[$key]}
+            elif [ -d "$key" ]; then
+            	printf "Installing folder '$key' -> ${element[$key]}\n"
+            	cp --recursive --no-clobber --preserve --no-target-directory $key ${element[$key]}
+          fi
+        done
+    done
+}

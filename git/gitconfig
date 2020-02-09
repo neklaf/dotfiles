@@ -1,0 +1,11 @@
+[user]
+	name = neklaf
+	email = aitor.acedo@gmail.com
+[alias]
+    ci = commit
+    st = status -s
+    co = checkout
+    oneline = log --pretty=oneline
+    br = branch
+    la = log --pretty="format:%ad %h (%an): %s" --date=short
+    caa = commit -a --amend -C HEAD

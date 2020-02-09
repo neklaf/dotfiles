@@ -9,6 +9,7 @@ source common-functions.sh
 
 VIMRC="$HOME/.vimrc"
 VIMFOLDER="$HOME/.vim"
+LOCAL_VIMRC="./vim/vimrc"
 
 #------------------------------------------------------------------------------
 # Main program
@@ -34,12 +35,17 @@ if [ "$1" == "-i" ]; then
         { echo "Aborting installation..."; exit 1; }
 
     echo "Installing config files..."
-    do_install $VIMRC
+    declare -A CONFIG_MAP=( ["$LOCAL_VIMRC"]="$VIMRC" )
+    #printf "keys: ${!CONFIG_MAP[@]}\n"
+    #printf "values: ${CONFIG_MAP[*]}\n"
+    do_map_install "$(declare -p CONFIG_MAP)" 
     
-    echo "Installing vundle..."
+    echo "Installing VIM plugins..."
     git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
+    git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 
-    echo "Installing vundle packages..."
+    echo "Installing packages..."
     vim +PluginInstall +qall
 
     echo "Done!"

@@ -1,12 +1,12 @@
 # dotfiles
 This project contains my configuration files used on GNU/Linux and OS X.
-Some files are based on this repository: https://github.com/davidag/dotfiles
-
 In this repository you found the following components and its settings:
 
 ## i3wm
 Tiling Window Manager with conky and some scripts that I needed.
-- Currently without using Composite Manager like Compton.
+- Installing and setup: conky, thunar, dunst, dmenu, i3lock and scrot
+- Auxiliar packages: gimp, hamster-applet, clusterssh, meld, gnome-calculator
+- This settings are not using any Composite Manager like Compton.
 
 ## vim
 Text editor
@@ -21,3 +21,12 @@ I am not a researcher but I still use it :)
 
 ## OS X
 Some performance tweaks
+
+<br>
+
+<div align="center">
+   <sub>Created by
+   <a href="https://github.com/davidag/">David Alfonso</a>
+   <sub>Crontributed by
+   <a href="https://twitter.com/AitorAcedo">AitorAcedo</a>
+</div>

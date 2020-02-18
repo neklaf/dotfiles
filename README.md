@@ -29,6 +29,6 @@ Some performance tweaks
    <a href="https://github.com/davidag/">David Alfonso</a>
 </div>
 <div align="center">
-   <sub>Crontributed by
+   <sub>Contributed by
    <a href="https://twitter.com/AitorAcedo">AitorAcedo</a>
 </div>

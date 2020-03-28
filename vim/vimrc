@@ -66,9 +66,9 @@ set grepformat=%f:%l:%c:%m
 """""" ENCODING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " output encoding shown in the terminal latin1 (used in most projects)
-"set encoding=latin1
+set encoding=utf-8
 " output encoding of the file that is written
-set fileencoding=latin1
+set fileencoding=utf-8
 
 """""" KEY MAPPING
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

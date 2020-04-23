@@ -23,6 +23,8 @@ I am not a researcher but I still use it :)
 Some performance tweaks
 
 <br>
+[![Setting up Vim editor](https://asciinema.org/a/syLxNIyr28e4oCIuSgINqTt6l)](https://asciinema.org/a/syLxNIyr28e4oCIuSgINqTt6l)
+
 
 <div align="center">
    <sub>Created by

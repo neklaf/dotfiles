@@ -23,8 +23,8 @@ I am not a researcher but I still use it :)
 Some performance tweaks
 
 <br>
-[https://asciinema.org/a/syLxNIyr28e4oCIuSgINqTt6l](https://asciinema.org/a/syLxNIyr28e4oCIuSgINqTt6l)
-
+<br>
+[![asciicast](https://asciinema.org/a/syLxNIyr28e4oCIuSgINqTt6l.png)](https://asciinema.org/a/syLxNIyr28e4oCIuSgINqTt6l)
 
 <div align="center">
    <sub>Created by
@@ -32,5 +32,5 @@ Some performance tweaks
 </div>
 <div align="center">
    <sub>Contributed by
-   <a href="https://twitter.com/AitorAcedo">AitorAcedo</a>
+   <a href="https://twitter.com/AitorAcedo">Aitor Acedo</a>
 </div>

@@ -15,17 +15,18 @@ Text editor
 Version control
 
 ## LaTeX
-I am not a researcher but I still use it :)
+I'm not a researcher but I still use it :)
 
 ## Bash
 
 ## OS X
 Some performance tweaks
 
-<br>
-<br>
 
+## How to use this repository 
 [![asciicast](doc/how_to_use.png)](https://asciinema.org/a/syLxNIyr28e4oCIuSgINqTt6l)
+
+<br>
 
 <div align="center">
    <sub>Created by

@@ -137,23 +137,38 @@ OK="2714"
 # shows if any TaskWarrior tasks are in need of attention
 function task_indicator {
     if [ `task +READY +OVERDUE count` -gt "0" ]  ; then
-        #printf "%b" "\u$OVERDUE"
         printf "%b" "$OVERDUE"
     elif [ `task +READY +DUETODAY count` -gt "0" ]  ; then
-        #printf "%b" "\u$DUETODAY"
         printf "%b" "$DUETODAY"
     elif [ `task +READY +DUETomorrow count` -gt "0" ]  ; then
-        #printf "%b" "\u$DUETOMORROW"
         printf "%b" "$DUETOMORROW"
     elif [ `task +READY urgency \> 10 count` -gt "0" ]  ; then
-        #printf "%b" "\u$URGENT"
         printf "%b" "$URGENT"
     else
-        #printf "%b" "\u$OK"
         printf "%b" "$TICK"
     fi
 }
+
 alias tasks='task_indicator'
 task="\$(task_indicator)"
 addprompt=$task
 export PROMPT="$addprompt $PROMPT"
+
+# Function created to 50% of the time period
+# First parameter is a tag to group the are
+# Second parameter is the task name
+# Example:
+# $ task_add '+hype' 'install Prometheus in Hype'
+function task_add {
+   task add pro:adi $1 due:`date +%Y-%m-%d` $2 +next |
+   while IFS= read -r line
+   do
+     if [[ $line == *"Created task"* ]]; then
+        text='Created task '
+        #echo "TASK CREATED WITH NUMBER ${line:${#text}:$((${#line}))}\n"
+        num="${line:${#text}:${#line}}"
+        task start ${num%?}
+     fi
+   done
+}
+alias taskadd='task_add'
